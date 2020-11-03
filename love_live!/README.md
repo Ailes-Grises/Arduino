@@ -14,6 +14,7 @@ TowerPro Sp90 x 9
 はい．
 
 # (・口・) 〜bb
+```
 Can I do? I take it, Baby!
 Can I do? I make it, Baby!
 Can I do? I take it, Baby!
@@ -41,4 +42,4 @@ Can I do? I take it, Baby!
 Can I do? I make it, Baby!
 Can I do? I take it, Baby!
 Can I do? I make it, Baby!
-
+```
