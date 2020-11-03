@@ -10,9 +10,6 @@ TowerPro Sp90 x 9
 
 僕は綺羅じゃない．(by <del>夜神</del>渡辺月)
 
-# ｲｴﾆｶｴｯﾁｬｯﾀﾉｫ!?
-はい．
-
 # (・口・) 〜bb
 ```
 Can I do? I take it, Baby!
@@ -43,3 +40,7 @@ Can I do? I make it, Baby!
 Can I do? I take it, Baby!
 Can I do? I make it, Baby!
 ```
+
+# ｲｴﾆｶｴｯﾁｬｯﾀﾉｫ!?
+はい．
+
