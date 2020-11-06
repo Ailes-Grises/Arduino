@@ -4,11 +4,20 @@ private wars (easy) の自動化マシン．
 でも簡単なことよ?
 ```
 Arduino Uno   x 1
-TowerPro Sp90 x 9
+TowerPro SG90 x 9
 タッチペン    x 9
 ```
 
 僕は綺羅じゃない．(by <del>夜神</del>渡辺月)
+
+# 回路図!(・8・)
+TowerPro SG90 は，
+```
+黄色 : PWM(パルス信号)
+赤   : Vcc(+)
+茶色 : Gnd(-)
+```
+となっている．
 
 # (・口・) 〜bb
 ```

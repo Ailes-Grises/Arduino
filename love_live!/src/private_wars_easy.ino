@@ -2,7 +2,7 @@
 // システムコールは使えないかも知れない
 // delay() の単位はミリ秒
 #include<Servo.h>
-#define RAD 30 // サーボの回転角度
+#define RAD 10 // サーボの回転角度
 #define SERVO0 0 // サーボモータのピン番号(繋ぎ変えを想定してマクロにした)
 #define SERVO1 1
 #define SERVO2 2
@@ -12,6 +12,8 @@
 #define SERVO6 6
 #define SERVO7 7
 #define SERVO8 8
+
+#define TAP_DELAY 80 // タップの際，タッチしてから元に戻すまでに挟む非常に短い遅延時間
 
 #define BPM 127 // 後で専用ソフトで解析したほうが良い
 #define ONE_TONE 60/BPM // 四分音符1個の長さ(単位はsec)
@@ -26,6 +28,7 @@ class myservo_t : public Servo{
 	};
 	void tap(){
 		this->write(RAD);
+		delay(TAP_DELAY);
 		this->write(0);
 		delay(1); // ここの微調節が命．タップ操作の合計時間がちょうど1小節分でないと譜面が崩れる．
 	};
@@ -35,7 +38,7 @@ class myservo_t : public Servo{
 		this->write(0);
 		delay(1);
 	};
-}
+};
 
 void two_tap(myservo_t &arg1, myservo_t &arg2){
 	arg1.write(RAD);
@@ -165,10 +168,22 @@ void setup(){
 	servo[6].attach(SERVO6);
 	servo[7].attach(SERVO7);
 	servo[8].attach(SERVO8);
+
+	// 角度の初期化
+	servo[0].write(0);
+	servo[1].write(0);
+	servo[2].write(0);
+	servo[3].write(0);
+	servo[4].write(0);
+	servo[5].write(0);
+	servo[6].write(0);
+	servo[7].write(0);
+	servo[8].write(0);
 }
 
 void loop(){
-	if((int signal = Serial.read()) != - 1){
+	int signal;
+	if((signal = Serial.read()) != - 1){
 		switch(signal){
 			case 'j' : 
 				private_wars();
