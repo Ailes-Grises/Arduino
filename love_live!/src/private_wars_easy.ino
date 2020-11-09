@@ -30,17 +30,23 @@ class myservo_t : public Servo{
 		this->write(RAD);
 		delay(TAP_DELAY);
 		this->write(0);
-		delay(1); // ここの微調節が命．タップ操作の合計時間がちょうど1小節分でないと譜面が崩れる．
+		delay(ONE_TONE); // ここの微調節が命．タップ操作の合計時間がちょうど1小節分でないと譜面が崩れる．
+	};
+	void half_tap(){
+		this->write(RAD);
+		delay(TAP_DELAY);
+		this->write(0);
+		delay(ONE_TONE/2);
 	};
 	void long_tap(int time){
 		this->write(RAD);
 		delay(time);
 		this->write(0);
-		delay(1);
+		delay(ONE_TONE);
 	};
 };
 
-void two_tap(myservo_t &arg1, myservo_t &arg2){
+void double_tap(myservo_t &arg1, myservo_t &arg2){
 	arg1.write(RAD);
 	arg2.write(RAD);
 	arg1.write(0);
@@ -57,31 +63,31 @@ void private_wars(){
 	servo[3].tap();
 	servo[1].tap();
 	servo[2].tap();
-	delay(ONE_SECTION);
+	delay(ONE_TONE);
 	servo[6].tap();
 	servo[8].tap();
 	servo[7].tap();
-	delay(ONE_SECTION);
+	delay(ONE_TONE);
 	servo[0].tap();
 	servo[2].tap();
 	servo[1].tap();
-	delay(ONE_SECTION);
+	delay(ONE_TONE);
 	servo[8].tap();
 	servo[6].tap();
 	servo[7].tap();
-	delay(ONE_SECTION);
+	delay(ONE_TONE);
 	servo[1].tap();
 	servo[3].tap();
 	servo[2].tap();
-	delay(ONE_SECTION);
+	delay(ONE_TONE);
 	servo[7].tap();
 	servo[5].tap();
 	servo[6].tap();
-	delay(ONE_SECTION);
+	delay(ONE_TONE);
 	servo[2].tap();
 	servo[0].tap();
 	servo[1].tap();
-	delay(ONE_SECTION);
+	delay(ONE_TONE);
 	servo[6].tap();
 	servo[8].tap();
 	servo[7].tap();
@@ -90,13 +96,13 @@ void private_wars(){
 
 	/* Bメロ */
 	delay(ONE_SECTION + 3*ONE_TONE);
-	two_tap(servo[0], servo[8]);
+	double_tap(servo[0], servo[8]);
 	delay(ONE_SECTION + 3*ONE_TONE);
 	servo[3].tap();
 	delay(ONE_SECTION + 3*ONE_TONE);
-	two_tap(servo[0], servo[8]);
+	double_tap(servo[0], servo[8]);
 	delay(ONE_SECTION + 3*ONE_TONE); // wow!
-	two_tap(servo[2], servo[6]);     // 孤独の切
+	double_tap(servo[2], servo[6]);     // 孤独の切
 	delay(2*ONE_TONE);
 	servo[3].tap();                  // なさ
 	servo[2].tap();
@@ -108,7 +114,7 @@ void private_wars(){
 	delay(ONE_TONE);
 	servo[3].long_tap(3*ONE_TONE);   // 交わし合っ
 	delay(ONE_TONE);                 // て
-	two_tap(servo[2], servo[6]);     // お互いの
+	double_tap(servo[2], servo[6]);     // お互いの
 	delay(2*ONE_TONE);
 	servo[5].tap();                  // 所で
 	servo[6].tap();
@@ -140,21 +146,56 @@ void private_wars(){
 	servo[6].tap();                  // わっちゃ
 	servo[1].tap();                  // どぅー
 	delay(ONE_TONE);                 // わっちゃ
-	two_tap(servo[5], servo[3]);     // どぅー
+	double_tap(servo[5], servo[3]);     // どぅー
 	delay(ONE_TONE);                 // わっちゃ
-
 	servo[6].tap();
 	servo[2].tap();
 	servo[8].tap();
 	servo[0].tap();                  // ほら
 	servo[7].tap();                  // 人
 	delay(ONE_TONE);                 // 生
-	two_tap(servo[5], servo[3]);     // ちょっ
+	double_tap(servo[5], servo[3]);     // ちょっ
 	delay(ONE_TONE);                 // との
 	servo[2].tap();                  // 勇
 	servo[6].tap();                  // 気と
-	servo[3].tap();                  //
+	servo[3].tap();                  // 情
+	servo[5].half_tap();             // 熱
+	servo[5].half_tap();             // さ
 
+	/* Outro */
+	servo[3].tap();                  // Can
+	servo[1].tap();                  // I
+	servo[2].tap();                  // do
+	delay(ONE_TONE);
+	servo[5].tap();
+	servo[7].tap();
+	servo[6].tap();
+	delay(ONE_TONE);
+	servo[0].tap();
+	servo[2].tap();
+	servo[1].tap();
+	delay(ONE_TONE);
+	servo[8].tap();
+	servo[6].tap();
+	servo[7].tap();
+	delay(ONE_TONE);
+	servo[1].tap();
+	servo[3].tap();
+	double_tap(servo[2], servo[6]);
+	delay(ONE_TONE);
+	servo[7].tap();
+	servo[5].tap();
+	servo[6].tap();
+	delay(ONE_TONE);
+	servo[2].tap();
+	servo[0].tap();
+	double_tap(servo[1], servo[7]);
+	delay(2*ONE_TONE);
+	servo[4].half_tap();
+	servo[4].half_tap();
+	servo[4].tap();
+
+	/* The end */
 }
 
 void setup(){
@@ -182,6 +223,8 @@ void setup(){
 }
 
 void loop(){
+	private_wars();
+	/*
 	int signal;
 	if((signal = Serial.read()) != - 1){
 		switch(signal){
@@ -192,4 +235,6 @@ void loop(){
 				break;
 		}
 	}
+	*/
+
 }
