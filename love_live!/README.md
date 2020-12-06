@@ -31,7 +31,7 @@ TowerPro SG90     (¥400)    x 9
 # サーボモータ!(・8・)
 今回は，サーボモータとして秋葉で最も安かったTowerPro 社のSG90 というモータを採用した．
 TowerPro のサーボは定番のようだが，もう少し堅牢なものが良ければ，浅草ギ研のサーボなどが良いだろう(ただし最安値でも600円，9個揃えることを考えると金額が痛い(;8;))．
-![TowerPro SG90](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live/servo_1.img "TowerPro SG90")
+![TowerPro SG90](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live/servo_1.jpg "TowerPro SG90")
 
 TowerPro SG90 の配線は，
 ```
