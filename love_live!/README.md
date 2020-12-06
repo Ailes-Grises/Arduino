@@ -27,7 +27,7 @@ TowerPro SG90     (¥400)    x 9
 
 合計 ¥7,970
 ```
-![使用パーツ一覧](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/zentai.jpg "使用パーツ一覧")
+![使用パーツ一覧](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/zentai_2.jpg "使用パーツ一覧")
 
 # サーボモータ!(・8・)
 今回は，サーボモータとして秋葉で最も安かったTowerPro 社のSG90 というモータを採用した．
@@ -56,6 +56,7 @@ TowerPro SG90 の配線は，
 # タッチペン!(・8・)
 タッチペンを9本買うと，100均でも約1,000円かかる．
 しかも物によっては重いし，長い．
+なによりタッチペン(100均製)に1,000円も払うなんて馬鹿らしい．
 なので，タッチペンを9本自作することにした．
 
 スマホのタッチパネルの機構には，抵抗膜方式と静電容量方式の2つがある．
