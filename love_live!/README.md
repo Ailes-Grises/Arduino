@@ -26,7 +26,7 @@ TowerPro SG90     (¥400)    x 9
 
 合計 ¥7,970
 ```
-![使用パーツ一覧](https://raw.githubusercontent.com/Ailes-Grises/Arduino/love_live!/img/zentai.jpg "使用パーツ一覧")
+![使用パーツ一覧](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/zentai.jpg "使用パーツ一覧")
 
 # サーボモータ!(・8・)
 TowerPro SG90 は，
