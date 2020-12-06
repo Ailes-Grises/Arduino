@@ -1,22 +1,44 @@
 // メトロノームのような機能を使った方が良い(time.h系)
 // システムコールは使えないかも知れない
 // delay() の単位はミリ秒
+
+/* 
+ * [Topology]
+ * 
+ *  ----------------------
+ * |         combo        |
+ * |   S0     ＠     S8   |
+ * |    S1          S7    |
+ * |     S2        S6     |
+ * |       S3    S5       |
+ * |          S4          |
+ *  ----------------------
+ *      |
+ *      |
+ * -------------   -----------
+ * |           |   |         |
+ * | BreadBoad |---| Arduino |
+ * |           |   |         |
+ * -------------   -----------
+ * 
+ */
+
 #include<Servo.h>
 #define RAD 10 // サーボの回転角度
-#define SERVO0 0 // サーボモータのピン番号(繋ぎ変えを想定してマクロにした)
-#define SERVO1 1
-#define SERVO2 2
-#define SERVO3 3
-#define SERVO4 4
+#define SERVO0 10 // サーボモータのピン番号(繋ぎ変えを想定してマクロにした)
+#define SERVO1 9
+#define SERVO2 8
+#define SERVO3 7
+#define SERVO4 6
 #define SERVO5 5
-#define SERVO6 6
-#define SERVO7 7
-#define SERVO8 8
+#define SERVO6 4
+#define SERVO7 3
+#define SERVO8 2
 
 #define TAP_DELAY 80 // タップの際，タッチしてから元に戻すまでに挟む非常に短い遅延時間
 
 #define BPM 127 // 後で専用ソフトで解析したほうが良い
-#define ONE_TONE 60/BPM // 四分音符1個の長さ(単位はsec)
+#define ONE_TONE 60000/BPM // 四分音符1個の長さ(単位はmsec)
 #define ONE_SECTION 4*ONE_TONE // 1小節の長さ
 
 // 'j'をトリガとして入力された角度だけサーボを回転させる
@@ -49,9 +71,10 @@ class myservo_t : public Servo{
 void double_tap(myservo_t &arg1, myservo_t &arg2){
 	arg1.write(RAD);
 	arg2.write(RAD);
+	delay(TAP_DELAY);
 	arg1.write(0);
 	arg2.write(0);
-	delay(1); // ちゃんと補正すること．
+	delay(ONE_TONE);
 }
 
 myservo_t servo[9];
