@@ -1,7 +1,7 @@
 # What's this !?(・8・)
 Private Wars (easy) の自動化マシン．
 <del>一週間に50回もライブ(その内30回はフルコン)とか機械にやらせるべきだよね(・8・)</del>
-![スク○ェス自動化マシン](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/machine.jpg "スク○ェス自動化マシン")
+![スク●ェス自動化マシン](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/machine.jpg "スク●ェス自動化マシン")
 
 # 使用部品!(・8・)
 このマシンを開発するにあたって，以下のパーツを使用した．
@@ -101,13 +101,13 @@ TowerPro SG90 の配線は，
 
 # ボードの作成
 断熱ボードを加工して台座を作る．
-まず，スマホでスク○ェスを立ち上げ，ライブの画面でスクリーンショットをとっておく．
+まず，スマホでスク●ェスを立ち上げ，ライブの画面でスクリーンショットをとっておく．
 次に，薄手の紙にスマホの外周の型を取り，カットする．
 そしてその紙をスマホの上にマスキングし，先程のスクショ画面の上からプレイ画面を紙の上に複製する．
 ![型取り](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/kata.jpg "型取り")
 
 こうして作成した複製紙を断熱ボートに転写する．
-スク○ェスにはタップボタンが9箇所あるため，180 ÷ 8 = 22.5度間隔で中心から線を引いた延長線上にタップボタンがある．
+スク●ェスにはタップボタンが9箇所あるため，180 ÷ 8 = 22.5度間隔で中心から線を引いた延長線上にタップボタンがある．
 
 ![ボードの作成](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/matt.jpg "ボードの作成")
 
