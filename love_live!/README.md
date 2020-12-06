@@ -31,7 +31,7 @@ TowerPro SG90     (¥400)    x 9
 # サーボモータ!(・8・)
 今回は，サーボモータとして秋葉で最も安かったTowerPro 社のSG90 というモータを採用した．
 TowerPro のサーボは定番のようだが，もう少し堅牢なものが良ければ，浅草ギ研のサーボなどが良いだろう(ただし最安値でも600円，9個揃えることを考えると金額が痛い(;8;))．
-![TowerPro SG90](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live/servo_1.jpg "TowerPro SG90")
+![TowerPro SG90](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/servo_1.jpg "TowerPro SG90")
 
 TowerPro SG90 の配線は，
 ```
@@ -47,6 +47,7 @@ TowerPro SG90 の配線は，
 取り付けの際は，断熱マットの切れ端を正方形に加工し，これとサーボを絶縁テープで巻いて高さを出した．
 というのも，ロボットアームの部分に関してはクリップを折り曲げて作成しているため，根本的にタッチする力が弱い．
 そこで，モーメントを稼ぐために，モータの位置自体を高くしてタッチする力を強化した．
+![TowerPro SG90](https://raw.githubusercontent.com/Ailes-Grises/Arduino/img/love_live!/servo_1.jpg "TowerPro SG90")
 
 モータの取り付けに関しては，サーボモータに絶縁テープ(黄色)を巻いて羽を付け，この羽の部分をサーボモータ付属の金属製ネジで固定した．
 畳んだ絶縁テープは穴が空きにくいため，あらかじめ安全ピンで穴を開けてからネジ止めしたほうが良い．
