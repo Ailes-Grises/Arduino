@@ -24,7 +24,7 @@
  */
 
 #include<Servo.h>
-#define RAD 10 // サーボの回転角度
+#define RAD 5 // サーボの回転角度
 #define SERVO0 10 // サーボモータのピン番号(繋ぎ変えを想定してマクロにした)
 #define SERVO1 9
 #define SERVO2 8
@@ -34,8 +34,9 @@
 #define SERVO6 4
 #define SERVO7 3
 #define SERVO8 2
+#define LED_PIN 13
 
-#define TAP_DELAY 80 // タップの際，タッチしてから元に戻すまでに挟む非常に短い遅延時間
+#define TAP_DELAY 120 // タップの際，タッチしてから元に戻すまでに挟む非常に短い遅延時間
 
 #define BPM 127 // 後で専用ソフトで解析したほうが良い
 #define ONE_TONE 60000/BPM // 四分音符1個の長さ(単位はmsec)
@@ -81,6 +82,8 @@ myservo_t servo[9];
 
 
 void private_wars(){
+	digitalWrite(LED_PIN, HIGH);
+
 	delay(4*ONE_SECTION); // 冒頭4小節は休み
 	/* Aメロ */
 	servo[3].tap();
@@ -232,6 +235,8 @@ void setup(){
 	servo[6].attach(SERVO6);
 	servo[7].attach(SERVO7);
 	servo[8].attach(SERVO8);
+
+	pinMode(LED_PIN, OUTPUT);
 
 	// 角度の初期化
 	servo[0].write(0);
